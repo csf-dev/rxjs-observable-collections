@@ -27,5 +27,28 @@
   "bugs": {
     "url": "https://github.com/csf-dev/rxjs-observable-collections/issues"
   },
-  "homepage": "https://github.com/csf-dev/rxjs-observable-collections#readme"
+  "homepage": "https://github.com/csf-dev/rxjs-observable-collections#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "flow-bin": "^0.82.0",
+    "jasmine": "^3.2.0",
+    "karma": "^3.0.0",
+    "karma-jasmine": "^1.1.2",
+    "flow-typed": "^2.5.1",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "window": "^4.2.5"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "last 2 versions",
+    "not ie 8",
+    "node 10",
+    "node 8"
+  ],
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  }
 }
