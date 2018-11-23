@@ -1,0 +1,31 @@
+{
+  "name": "rxjs-observable-collections",
+  "version": "0.1.0",
+  "description": "Implementations of collection classes (Array, Set, Map, WeakSet, WeakMap) which expose observables indicating when they are mutated",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csf-dev/rxjs-observable-collections.git"
+  },
+  "keywords": [
+    "rxjs",
+    "array",
+    "map",
+    "set",
+    "weakmap",
+    "weakset",
+    "observable",
+    "mutate",
+    "change",
+    "events"
+  ],
+  "author": "Craig Fowler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csf-dev/rxjs-observable-collections/issues"
+  },
+  "homepage": "https://github.com/csf-dev/rxjs-observable-collections#readme"
+}
