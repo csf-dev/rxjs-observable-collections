@@ -4,7 +4,8 @@
   "description": "Implementations of collection classes (Array, Set, Map, WeakSet, WeakMap) which expose observables indicating when they are mutated",
   "main": "index.js",
   "scripts": {
-    "test": "npx karma start --single-run"
+    "test": "npx karma start --single-run",
+    "tests": "npx karma start --no-single-run"
   },
   "repository": {
     "type": "git",
@@ -32,14 +33,18 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
-    "babel-loader": "^8.0.4",
     "flow-bin": "^0.82.0",
     "jasmine": "^3.2.0",
     "karma": "^3.0.0",
     "karma-jasmine": "^1.1.2",
     "flow-typed": "^2.5.1",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "window": "^4.2.5"
+    "window": "^4.2.5",
+    "karma-babel-preprocessor": "next",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-webpack": "^3.0.5",
+    "webpack": "^4.20.2",
+    "babel-loader": "^8.0.4"
   },
   "browserslist": [
     "> 0.2%",
@@ -49,6 +54,7 @@
     "node 8"
   ],
   "dependencies": {
-    "rxjs": "^6.3.3"
+    "rxjs": "^6.3.3",
+    "@babel/polyfill": "^7.0.0"
   }
 }
