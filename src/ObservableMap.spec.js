@@ -83,7 +83,7 @@ describe('The observable map', () => {
     });
 
     describe('set function', () => {
-        it('should add a value to the instance', () => {
+        it('should be able to add a value to the instance', () => {
             const sut = new ObservableMap([['a', 1], ['b', 2]]);
             sut.set('c', 3);
             expect(Array.from(sut.entries())).toEqual([['a', 1], ['b', 2], ['c', 3]]);
@@ -98,6 +98,19 @@ describe('The observable map', () => {
             expect(action.type).toBe(a.MapActions.set);
             expect(action.key).toEqual('c');
             expect(action.value).toEqual(3);
+            expect(action.map).toBe(sut);
+        });
+
+        it('should indicate in the action when the key previously existed in the map', () => {
+            const sut = new ObservableMap([['a', 1], ['b', 2]]);
+            setupActionSubscription(sut);
+            sut.set('b', 5);
+
+            const action = getLastAction(a.MapSetAction);
+            expect(action.type).toBe(a.MapActions.set);
+            expect(action.key).toEqual('b');
+            expect(action.value).toEqual(5);
+            expect(action.newKey).toBeFalsy();
             expect(action.map).toBe(sut);
         });
     });

@@ -8,9 +8,12 @@ export class ObservableSet<T : mixed> extends Set<T> {
     get actions() : rxjs$Observable<a.SetAction<T>> { return this.#subject; }
 
     add(value : T) : Set<T> {
-        super.add(value);
-        const action = new a.SetAddAction(this, value);
-        this.#subject.next(action);
+        const alreadyPresent = super.has(value);
+        if(!alreadyPresent) {
+            super.add(value);
+            const action = new a.SetAddAction(this, value);
+            this.#subject.next(action);
+        }
         return this;
     }
 

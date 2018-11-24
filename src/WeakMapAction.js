@@ -27,12 +27,14 @@ export class WeakMapAction<K : {}, V : mixed> {
 export class WeakMapSetAction<K : {}, V : mixed> extends WeakMapAction<K,V> {
     key : K
     value : V;
+    newKey : bool;
 
-    constructor(map : ObservableWeakMap<K,V>, key : K, value : V) {
+    constructor(map : ObservableWeakMap<K,V>, key : K, value : V, newKey : bool) {
         super(WeakMapActions.set, map);
 
         this.key = key;
         this.value = value;
+        this.newKey = newKey;
     }
 }
 

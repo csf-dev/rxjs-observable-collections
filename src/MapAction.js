@@ -29,12 +29,14 @@ export class MapAction<K : mixed, V : mixed> {
 export class MapSetAction<K : mixed, V : mixed> extends MapAction<K,V> {
     key : K
     value : V;
+    newKey : bool;
 
-    constructor(map : ObservableMap<K,V>, key : K, value : V) {
+    constructor(map : ObservableMap<K,V>, key : K, value : V, newKey : bool) {
         super(MapActions.set, map);
 
         this.key = key;
         this.value = value;
+        this.newKey = newKey;
     }
 }
 

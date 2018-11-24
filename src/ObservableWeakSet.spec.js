@@ -58,6 +58,16 @@ describe('The observable weak set', () => {
             expect(action.value).toBe(item2);
             expect(action.set).toBe(sut);
         });
+
+        it('should not emit an action if the item is already container', () => {
+            const sut = new ObservableWeakSet([item1]);
+            setupActionSubscription(sut);
+            sut.add(item1);
+
+            // The last action is an initial state action because the deletion didn't raise a new one
+            const action = getLastAction(a.WeakSetInitialStateAction);
+            expect(action.type).toBe(a.WeakSetActions.initialState);
+        });
     });
 
     describe('delete function', () => {

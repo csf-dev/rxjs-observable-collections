@@ -41,7 +41,7 @@ describe('The observable weak map', () => {
         });
     });
     describe('set function', () => {
-        it('should add a value to the instance', () => {
+        it('should be able to add a value to the instance', () => {
             const sut = new ObservableWeakMap([[key1, 1], [key2, 2]]);
             sut.set(key3, 3);
             expect(sut.has(key3)).toBeTruthy();
@@ -56,6 +56,20 @@ describe('The observable weak map', () => {
             expect(action.type).toBe(a.WeakMapActions.set);
             expect(action.key).toEqual(key3);
             expect(action.value).toEqual(3);
+            expect(action.newKey).toBeTruthy();
+            expect(action.map).toBe(sut);
+        });
+
+        it('should indicate in the action when the key previously existed in the map', () => {
+            const sut = new ObservableWeakMap([[key1, 1], [key2, 2]]);
+            setupActionSubscription(sut);
+            sut.set(key2, 5);
+
+            const action = getLastAction(a.WeakMapSetAction);
+            expect(action.type).toBe(a.WeakMapActions.set);
+            expect(action.key).toEqual(key2);
+            expect(action.value).toEqual(5);
+            expect(action.newKey).toBeFalsy();
             expect(action.map).toBe(sut);
         });
     });

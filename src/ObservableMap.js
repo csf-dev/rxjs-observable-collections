@@ -8,8 +8,9 @@ export class ObservableMap<K : mixed, V : mixed> extends Map<K,V> {
     get actions() : rxjs$Observable<a.MapAction<K,V>> { return this.#subject; }
 
     set(key : K, value : V) : Map<K,V> {
+        const newKey = !super.has(key);
         super.set(key, value);
-        const action = new a.MapSetAction(this, key, value);
+        const action = new a.MapSetAction(this, key, value, newKey);
         this.#subject.next(action);
         return this;
     }

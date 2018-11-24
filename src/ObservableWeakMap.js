@@ -8,8 +8,9 @@ export class ObservableWeakMap<K : {}, V : mixed> extends WeakMap<K,V> {
     get actions() : rxjs$Observable<a.WeakMapAction<K,V>> { return this.#subject; }
 
     set(key : K, value : V) : WeakMap<K,V> {
+        const newKey = !super.has(key);
         super.set(key, value);
-        const action = new a.WeakMapSetAction(this, key, value);
+        const action = new a.WeakMapSetAction(this, key, value, newKey);
         this.#subject.next(action);
         return this;
     }

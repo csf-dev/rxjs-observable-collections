@@ -99,6 +99,16 @@ describe('The observable set', () => {
             expect(action.value).toEqual(5);
             expect(action.set).toBe(sut);
         });
+
+        it('should not emit an action if the item is already container', () => {
+            const sut = new ObservableSet<number>([1, 2, 3, 4]);
+            setupActionSubscription(sut);
+            sut.add(4);
+
+            // The last action is an initial state action because the deletion didn't raise a new one
+            const action = getLastAction(a.SetInitialStateAction);
+            expect(action.type).toBe(a.SetActions.initialState);
+        });
     });
 
     describe('delete function', () => {

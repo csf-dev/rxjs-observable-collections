@@ -8,9 +8,12 @@ export class ObservableWeakSet<T : {}> extends WeakSet<T> {
     get actions() : rxjs$Observable<a.WeakSetAction<T>> { return this.#subject; }
 
     add(value : T) : WeakSet<T> {
-        super.add(value);
-        const action = new a.WeakSetAddAction(this, value);
-        this.#subject.next(action);
+        const alreadyPresent = super.has(value);
+        if(!alreadyPresent) {
+            super.add(value);
+            const action = new a.WeakSetAddAction(this, value);
+            this.#subject.next(action);
+        }
         return this;
     }
 
