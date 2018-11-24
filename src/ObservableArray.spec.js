@@ -1,7 +1,6 @@
 //@flow
 import { ObservableArray } from './ObservableArray';
 import * as a from './ArrayAction';
-import { map } from 'rxjs/operators';
 
 describe('The observable array', () => {
     let sub : ?rxjs$Subscription = null;
