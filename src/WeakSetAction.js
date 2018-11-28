@@ -6,7 +6,10 @@ export const WeakSetActions = {
     add: 'add',
     delete: 'delete',
     // Extra mutation methods
-    initialState: 'initialState'
+    initialState: 'initialState',
+    // Extra actions for the clearable wrapper only
+    clear: 'clear',
+    replaceContents: 'replaceContents',
 };
 
 export type WeakSetActionName = $Keys<typeof WeakSetActions>;
@@ -41,6 +44,18 @@ export class WeakSetDeleteAction<T : mixed> extends WeakSetAction<T> {
         super(WeakSetActions.delete, set);
 
         this.value = value;
+    }
+}
+
+export class WeakSetClearAction<T : mixed> extends WeakSetAction<T> {
+    constructor(set : ObservableWeakSet<T>) {
+        super(WeakSetActions.clear, set);
+    }
+}
+
+export class WeakSetReplaceContentsAction<T : mixed> extends WeakSetAction<T> {
+    constructor(set : ObservableWeakSet<T>) {
+        super(WeakSetActions.replaceContents, set);
     }
 }
 

@@ -6,7 +6,10 @@ export const WeakMapActions = {
     set: 'set',
     delete: 'delete',
     // Extra mutation methods
-    initialState: 'initialState'
+    initialState: 'initialState',
+    // Extra actions for the clearable wrapper only
+    clear: 'clear',
+    replaceContents: 'replaceContents',
 };
 
 export type WeakMapActionName = $Keys<typeof WeakMapActions>;
@@ -45,6 +48,18 @@ export class WeakMapDeleteAction<K : {}, V : mixed> extends WeakMapAction<K,V> {
         super(WeakMapActions.delete, map);
 
         this.key = key;
+    }
+}
+
+export class WeakMapClearAction<K : {}, V : mixed> extends WeakMapAction<K,V> {
+    constructor(set : ObservableWeakMap<K,V>) {
+        super(WeakMapActions.clear, set);
+    }
+}
+
+export class WeakMapReplaceContentsAction<K : {}, V : mixed> extends WeakMapAction<K,V> {
+    constructor(set : ObservableWeakMap<K,V>) {
+        super(WeakMapActions.replaceContents, set);
     }
 }
 
