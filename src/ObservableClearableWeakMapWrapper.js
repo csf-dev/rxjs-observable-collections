@@ -3,6 +3,14 @@ import * as a from './WeakMapAction';
 import { ObservableWeakMap } from './ObservableWeakMap';
 import { Subject } from 'rxjs';
 
+/* This implementation is required when you wish to use a WeakMap but
+ * you also wish to retain the ability to clear and/or replace it contents.
+ *
+ * This class wraps a normal observable weak map, but provides custom
+ * implementations of clear and replace functionality.  It also ensures
+ * continuity of the actions stream if the contents are cleared/replaced.
+ */
+
 export class ObservableClearableWeakMapWrapper<K : {}, V : mixed> {
     #wrapped : ObservableWeakMap<K,V>;
     #subject : rxjs$Subject<a.WeakMapAction<K,V>>;

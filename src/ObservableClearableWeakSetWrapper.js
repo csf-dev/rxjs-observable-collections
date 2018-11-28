@@ -3,6 +3,14 @@ import * as a from './WeakSetAction';
 import { ObservableWeakSet } from './ObservableWeakSet';
 import { Subject } from 'rxjs';
 
+/* This implementation is required when you wish to use a WeakSet but
+ * you also wish to retain the ability to clear and/or replace it contents.
+ *
+ * This class wraps a normal observable weak set, but provides custom
+ * implementations of clear and replace functionality.  It also ensures
+ * continuity of the actions stream if the contents are cleared/replaced.
+ */
+
 export class ObservableClearableWeakSetWrapper<T : {}> {
     #wrapped : ObservableWeakSet<T>;
     #subject : rxjs$Subject<a.WeakSetAction<T>>;
