@@ -3,6 +3,8 @@ import * as a from './WeakMapAction';
 import { ObservableWeakMap } from './ObservableWeakMap';
 import { Subject } from 'rxjs';
 
+type TypedSubject<K : {}, V : mixed> = rxjs$Subject<a.WeakMapAction<K,V>>;
+
 /* This implementation is required when you wish to use a WeakMap but
  * you also wish to retain the ability to clear and/or replace it contents.
  *
@@ -13,7 +15,8 @@ import { Subject } from 'rxjs';
 
 export class ObservableClearableWeakMapWrapper<K : {}, V : mixed> {
     #wrapped : ObservableWeakMap<K,V>;
-    #subject : rxjs$Subject<a.WeakMapAction<K,V>>;
+    //$FlowFixMe
+    #subject : TypedSubject<K,V>;
     #subscription : rxjs$Subscription;
 
     get actions() { return this.#subject; }

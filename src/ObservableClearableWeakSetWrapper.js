@@ -3,6 +3,8 @@ import * as a from './WeakSetAction';
 import { ObservableWeakSet } from './ObservableWeakSet';
 import { Subject } from 'rxjs';
 
+type TypedSubject<T : {}> = rxjs$Subject<a.WeakSetAction<T>>;
+
 /* This implementation is required when you wish to use a WeakSet but
  * you also wish to retain the ability to clear and/or replace it contents.
  *
@@ -13,7 +15,8 @@ import { Subject } from 'rxjs';
 
 export class ObservableClearableWeakSetWrapper<T : {}> {
     #wrapped : ObservableWeakSet<T>;
-    #subject : rxjs$Subject<a.WeakSetAction<T>>;
+    //$FlowFixMe
+    #subject : TypedSubject<T>;
     #subscription : rxjs$Subscription;
 
     get actions() { return this.#subject; }

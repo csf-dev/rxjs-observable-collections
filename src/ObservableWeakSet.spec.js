@@ -4,7 +4,7 @@ import * as a from './WeakSetAction';
 
 describe('The observable weak set', () => {
     let sub : ?rxjs$Subscription = null;
-    let lastAction : ?a.WeakSetAction<number> = null;
+    let lastAction : ?a.WeakSetAction<{foo:number}> = null;
 
     const item1 = { foo: 1 }, item2 = { foo: 2 };
 
@@ -103,7 +103,7 @@ describe('The observable weak set', () => {
         sub = sut.actions.subscribe(action => lastAction = action);
     }
 
-    function getLastAction<T : a.WeakSetAction<number>>(expected : Class<T>) : T {
+    function getLastAction<T : a.WeakSetAction<{foo:number}>>(expected : Class<T>) : T {
         if(!lastAction) throw new Error('Last action must not be null');
 
         if(lastAction instanceof expected)
