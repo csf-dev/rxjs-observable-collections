@@ -6,12 +6,15 @@ export const WeakSetActions = {
     add: 'add',
     delete: 'delete',
     // Extra mutation methods
-    initialState: 'initialState'
+    initialState: 'initialState',
+    // Extra actions for the clearable wrapper only
+    clear: 'clear',
+    replaceContents: 'replaceContents',
 };
 
 export type WeakSetActionName = $Keys<typeof WeakSetActions>;
 
-export class WeakSetAction<T : mixed> {
+export class WeakSetAction<T : {}> {
     #type : WeakSetActionName;
     #set : ObservableWeakSet<T>;
 
@@ -24,7 +27,7 @@ export class WeakSetAction<T : mixed> {
     }
 }
 
-export class WeakSetAddAction<T : mixed> extends WeakSetAction<T> {
+export class WeakSetAddAction<T : {}> extends WeakSetAction<T> {
     value : T;
 
     constructor(set : ObservableWeakSet<T>, value : T) {
@@ -34,7 +37,7 @@ export class WeakSetAddAction<T : mixed> extends WeakSetAction<T> {
     }
 }
 
-export class WeakSetDeleteAction<T : mixed> extends WeakSetAction<T> {
+export class WeakSetDeleteAction<T : {}> extends WeakSetAction<T> {
     value : T;
 
     constructor(set : ObservableWeakSet<T>, value : T) {
@@ -44,7 +47,19 @@ export class WeakSetDeleteAction<T : mixed> extends WeakSetAction<T> {
     }
 }
 
-export class WeakSetInitialStateAction<T : mixed> extends WeakSetAction<T> {
+export class WeakSetClearAction<T : {}> extends WeakSetAction<T> {
+    constructor(set : ObservableWeakSet<T>) {
+        super(WeakSetActions.clear, set);
+    }
+}
+
+export class WeakSetReplaceContentsAction<T : {}> extends WeakSetAction<T> {
+    constructor(set : ObservableWeakSet<T>) {
+        super(WeakSetActions.replaceContents, set);
+    }
+}
+
+export class WeakSetInitialStateAction<T : {}> extends WeakSetAction<T> {
     constructor(set : ObservableWeakSet<T>) {
         super(WeakSetActions.initialState, set);
     }
