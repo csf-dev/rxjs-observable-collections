@@ -11,7 +11,7 @@ export const SetActions = {
     initialState: 'initialState'
 };
 
-export type SetActionName = $Keys<typeof SetActions>;
+type SetActionName = $Keys<typeof SetActions>;
 
 export class SetAction<T : mixed> {
     #type : SetActionName;

@@ -12,7 +12,7 @@ export const WeakMapActions = {
     replaceContents: 'replaceContents',
 };
 
-export type WeakMapActionName = $Keys<typeof WeakMapActions>;
+type WeakMapActionName = $Keys<typeof WeakMapActions>;
 
 export class WeakMapAction<K : {}, V : mixed> {
     #type : WeakMapActionName;

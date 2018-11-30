@@ -12,7 +12,7 @@ export const WeakSetActions = {
     replaceContents: 'replaceContents',
 };
 
-export type WeakSetActionName = $Keys<typeof WeakSetActions>;
+type WeakSetActionName = $Keys<typeof WeakSetActions>;
 
 export class WeakSetAction<T : {}> {
     #type : WeakSetActionName;

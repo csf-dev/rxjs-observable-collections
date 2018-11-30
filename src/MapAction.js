@@ -11,7 +11,7 @@ export const MapActions = {
     initialState: 'initialState'
 };
 
-export type MapActionName = $Keys<typeof MapActions>;
+type MapActionName = $Keys<typeof MapActions>;
 
 export class MapAction<K : mixed, V : mixed> {
     #type : MapActionName;

@@ -19,7 +19,7 @@ export const ArrayActions = {
     initialState: 'initialState'
 };
 
-export type ArrayActionName = $Keys<typeof ArrayActions>;
+type ArrayActionName = $Keys<typeof ArrayActions>;
 
 export class ArrayAction<T : mixed> {
     #type : ArrayActionName;
