@@ -9,5 +9,9 @@ module.exports = {
             }
         ]
     },
+    output: {
+        library: 'rxjs-observable-collections',
+        libraryTarget: 'umd'
+    },
     devtool: 'source-map'
 }
