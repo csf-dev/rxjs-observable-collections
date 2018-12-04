@@ -1,0 +1,10 @@
+src/
+node_modules/
+flow-typed/
+.babelrc
+.flowconfig
+.travis.yml
+karma.conf.js
+*.code-workspace
+webpack.config.js
+*.tgz
