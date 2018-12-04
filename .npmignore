@@ -8,3 +8,4 @@ karma.conf.js
 *.code-workspace
 webpack.config.js
 *.tgz
+tools/
