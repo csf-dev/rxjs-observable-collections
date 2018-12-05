@@ -19,10 +19,13 @@ myArray.push('An item');
 subscription.unsubscribe();
 ```
 
+[**Full documentation** is available] on this repository's wiki.
+
 [an rxjs observable action stream]: https://rxjs-dev.firebaseapp.com/
-[observable Array]: ObservableArray
-[observable arrays]: ObservableArray
+[observable Array]: https://github.com/csf-dev/rxjs-observable-collections/wiki/ObservableArray
+[observable arrays]: https://github.com/csf-dev/rxjs-observable-collections/wiki/ObservableArray
 [support ECMAScript 5+]: https://github.com/csf-dev/rxjs-observable-collections/wiki#browserenvironment-support
+[**Full documentation** is available]: https://github.com/csf-dev/rxjs-observable-collections/wiki
 
 ## Limitations
 In order to provide [the range of browser & environment support], this module has to accept *two limitations, applicable to [observable arrays]*.  Specifically, no observable actions are emitted when either:
