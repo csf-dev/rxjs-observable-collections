@@ -1,6 +1,6 @@
 The **Observable Collections** module provides implementations of JavaScript/ECMAScript 'collection' objects which emit [an rxjs observable action stream] as they are mutated: Array, Set, Map, WeakSet & WeakMap.  Reactive applications which use **rxjs** may subscribe/observe these actions to synchronise logic with modifications to those collections.
 
-Here is *an annotated minimal example* showing the usage of an [observable Array]. You may notice that it uses ECMAScript 2015 syntax.  Through transpilation, distributions of this module [support ECMAScript 5+].
+Here is *an annotated minimal example* showing the usage of an [observable Array]. You may notice that it uses ECMAScript 2015 syntax.  This module is usable in any environment which [supports ECMAScript 5+]; in practice that's Internet Explorer 9+ and *all other modern browsers*.
 
 
 ```js
@@ -24,7 +24,7 @@ subscription.unsubscribe();
 [an rxjs observable action stream]: https://rxjs-dev.firebaseapp.com/
 [observable Array]: https://github.com/csf-dev/rxjs-observable-collections/wiki/ObservableArray
 [observable arrays]: https://github.com/csf-dev/rxjs-observable-collections/wiki/ObservableArray
-[support ECMAScript 5+]: https://github.com/csf-dev/rxjs-observable-collections/wiki#browserenvironment-support
+[supports ECMAScript 5+]: https://github.com/csf-dev/rxjs-observable-collections/wiki#browserenvironment-support
 [**Full documentation** is available]: https://github.com/csf-dev/rxjs-observable-collections/wiki
 
 ## Limitations
