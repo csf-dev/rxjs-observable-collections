@@ -71,6 +71,7 @@
   ],
   "peerDependencies": {
     "rxjs": "^6.3.3",
-    "@babel/polyfill": "^7.0.0"
+    "@babel/polyfill": "^7.0.0",
+    "core-js": "^2.6.0"
   }
 }
