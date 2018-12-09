@@ -1,6 +1,6 @@
 {
   "name": "rxjs-observable-collections",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Implementations of collection classes (Array, Set, Map, WeakSet, WeakMap) which expose observables indicating when they are mutated",
   "main": "dist/index.js",
   "scripts": {
@@ -71,6 +71,7 @@
   ],
   "peerDependencies": {
     "rxjs": "^6.3.3",
-    "@babel/polyfill": "^7.0.0"
+    "@babel/polyfill": "^7.0.0",
+    "core-js": "^2.6.0"
   }
 }
