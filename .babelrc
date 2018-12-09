@@ -1,0 +1,9 @@
+{
+    "presets": [
+        [ "@babel/env", { "useBuiltIns": "usage" } ],
+        "@babel/flow"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties"
+    ]
+}

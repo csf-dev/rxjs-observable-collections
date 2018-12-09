@@ -1,0 +1,77 @@
+{
+  "name": "rxjs-observable-collections",
+  "version": "0.2.0",
+  "description": "Implementations of collection classes (Array, Set, Map, WeakSet, WeakMap) which expose observables indicating when they are mutated",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npx karma start --single-run",
+    "tests": "npx karma start --no-single-run",
+    "prepack": "node tools/prepack.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csf-dev/rxjs-observable-collections.git"
+  },
+  "keywords": [
+    "rxjs",
+    "array",
+    "map",
+    "set",
+    "weakmap",
+    "weakset",
+    "observable",
+    "mutate",
+    "change",
+    "events"
+  ],
+  "author": "Craig Fowler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csf-dev/rxjs-observable-collections/issues"
+  },
+  "homepage": "https://github.com/csf-dev/rxjs-observable-collections#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/cli": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "flow-bin": "^0.82.0",
+    "flow-typed": "^2.5.1",
+    "jasmine": "^3.2.0",
+    "karma": "^3.0.0",
+    "karma-babel-preprocessor": "next",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-webpack": "^3.0.5",
+    "rxjs": "^6.3.3",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "window": "^4.2.5",
+    "glob": "^7.1.3"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "last 2 versions",
+    "ChromeAndroid >= 55",
+    "Chrome >= 55",
+    "Firefox >= 50",
+    "FirefoxAndroid >= 50",
+    "Edge >= 12",
+    "IE >= 9",
+    "Opera >= 42",
+    "Safari >= 10",
+    "Android >= 4.4",
+    "iOS >= 10",
+    "Node 6",
+    "Node 8",
+    "Node 10"
+  ],
+  "peerDependencies": {
+    "rxjs": "^6.3.3",
+    "@babel/polyfill": "^7.0.0",
+    "core-js": "^2.6.0"
+  }
+}
