@@ -1,5 +1,4 @@
 module.exports = function(config) {
-  const webpackConfig = require('./webpack.config.js');
   const testFilePattern = ['src/**/*.spec.js'];
   const extraFiles = ['node_modules/@babel/polyfill/dist/polyfill.js'];
 
@@ -8,7 +7,20 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     files: (getTestFiles)(testFilePattern, extraFiles),
     preprocessors: testFilePattern.reduce(reducePreprocessors, {}),
-    webpack: webpackConfig,
+    // Webpack is ONLY used for testing, not for production
+    webpack: {
+      mode: 'development',
+      module: {
+          rules: [
+              {
+                  test: /\.js$/,
+                  exclude: /(node_modules|bower_components)/,
+                  use: { loader: 'babel-loader' }
+              }
+          ]
+      },
+      devtool: 'source-map'
+    },
     reporters: ['progress'],
     port: 9876,
     colors: true,
