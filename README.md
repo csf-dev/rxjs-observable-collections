@@ -1,4 +1,4 @@
-The **Observable Collections** module provides implementations of JavaScript/ECMAScript 'collection' objects which emit [an rxjs observable action stream] as they are mutated: Array, Set, Map, WeakSet & WeakMap.  Reactive applications which use **rxjs** may subscribe/observe these actions to synchronise logic with modifications to those collections.
+The **[Observable Collections](https://www.npmjs.com/package/rxjs-observable-collections)** module provides implementations of JavaScript/ECMAScript 'collection' objects which emit [an rxjs observable action stream] as they are mutated: Array, Set, Map, WeakSet & WeakMap.  Reactive applications which use **rxjs** may subscribe/observe these actions to synchronise logic with modifications to those collections.
 
 Here is *an annotated minimal example* showing the usage of an [observable Array]. You may notice that it uses ECMAScript 2015 syntax.  This module is usable in any environment which [supports ECMAScript 5+]; in practice that's Internet Explorer 9+ and *all other modern browsers*.
 
