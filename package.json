@@ -1,7 +1,7 @@
 {
   "name": "rxjs-observable-collections",
-  "version": "0.2.1",
-  "description": "Implementations of collection classes (Array, Set, Map, WeakSet, WeakMap) which expose observables indicating when they are mutated",
+  "version": "1.0.0",
+  "description": "Implementations of ES2015 collections (Array, Set, Map, WeakSet, WeakMap) which emit an rxjs observable stream of changes",
   "main": "dist/index.js",
   "scripts": {
     "test": "npx karma start --single-run",
